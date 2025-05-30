@@ -4,7 +4,7 @@ Contribution: 63%/37%
 
 Design Idea: Create a code that takes input from the user while displaying the current directory as a prompt. Then if the user types cd, change the current directory. If the user types path, it would display current environment path. Path + adds to it and path - removes a path from it. if the user types Quit (which needs to be outside the fork), needs to break out of the loop and end the program. Lastly, it needs to be able to redirect input to a file or redirect output to a file.
 
-To compile the program, I use the following command: gcc /home/michael-hylton/Desktop/Operating_Systems/project1.c -o project1 
+To compile the program, I use the following command: gcc (insert filepath here)/project1.c -o project1 
 though you will have to replace the path with the path you saved the code to.
 and then I run the program using ./project1
 
