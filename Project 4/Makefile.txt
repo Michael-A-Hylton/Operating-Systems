@@ -1,0 +1,15 @@
+NVCC = nvcc
+
+
+TARGET = p4_template
+
+all: build run
+
+build:
+	$(NVCC) $(TARGET).cu -o $(TARGET).o
+
+run:
+	./$(TARGET).o
+
+clean:
+	rm -f $(TARGET).o
