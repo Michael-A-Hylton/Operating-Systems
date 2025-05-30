@@ -1,0 +1,4 @@
+In Part 1, the execution is contained to just the main function, in which a file is continously read and referenced by the table to get the physcial address which is then summed.
+In Part 2 is where it gets more complicated. First the address must be translated as it was in part 1, but then we also need to work on the memory management and make sure we are adhering to LRU. Make is the keyword used to compile our files and make run runs the files. When an address is passed to the code, it translates each address using the page table and memory management functions. It will also increment page fualts as we go to have a running tally of how many pages fualt.It then outputs the translated physical addresses to part2out. Which it then uses to calculate the checksum of the part2out file using the md5sum utility and writes the result to p2result.txt.
+Michael Hylton 100% of the work, Danqi Li 0% of the work. Please reference emails sent back and forth with professor. 
+

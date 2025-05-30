@@ -1,0 +1,35 @@
+# Compiler and flags
+CC = gcc
+CFLAGS = -Wall -g  # -Wall enables all warnings, -g includes debug symbols
+
+# Output binary
+TARGET = mempart2
+
+# Source files
+SRCS = mempart2.c pagetable.c phyframe.c
+
+# Header files (if any needed)
+HEADERS = pagetable.h phyframe.h
+
+# Object files (automatically inferred)
+OBJS = $(SRCS:.c=.o)
+
+# Default target: Build the project
+all: $(TARGET)
+
+# Link object files to create the executable
+$(TARGET): $(OBJS)
+	$(CC) $(OBJS) -o $(TARGET)
+
+# Compile each .c file into a .o object file
+%.o: %.c $(HEADERS)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Clean up build artifacts (object files and executable)
+clean:
+	rm -f $(OBJS) $(TARGET)
+
+# Run the program and calculate checksum
+run:
+	./$(TARGET) part2sequence > part2out
+	md5sum part2out | awk '{print $$1}' > p2result.txt
